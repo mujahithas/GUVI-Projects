@@ -30,4 +30,9 @@ def step_impl(context):
 def step_impl(context):
     status = context.driver.find_element(By.XPATH, OrangeHrmElements.dash_board_statusbar_XPATh).text
     assert status == "Dashboard"
+    
+@then('User should not be login with invalid data')
+def step_impl(context):
+    status = context.driver.find_element(By.XPATH, OrangeHrmElements.Invalid_credential_msg_XPATH).text
+    assert status == "Invalid credentials"
 
